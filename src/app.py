@@ -9,7 +9,8 @@ def index():
 
 @app.route('/recipe')
 def recipe():
-    return "Recipe page"
+    typesArray = GetAllTypesWithUnit()
+    return render_template('recipeInput.html', types=typesArray)
 
 
 @app.route('/grocerylist')
