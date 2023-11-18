@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="../styles/recipeInput.css">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingredient List</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Ingredient List</h2>
+        <form id="ingredientForm">
+            <div id="ingredientFields">
+                <div class="ingredient-field">
+                    <input type="text" name="ingredient[]" placeholder="Ingredient" required>
+                    <input type="number" name="quantity[]" placeholder="Quantity" required>
+                    <input type="text" name="unit[]" placeholder="Unit" required>
+                    <button type="button" onclick="removeIngredientField()">Remove</button>
+                </div>
+            </div>
+            <button type="button" onclick="addIngredientField()">Add More</button>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <script>
+        function addIngredientField() {
+            var container = document.getElementById('ingredientFields');
+            var newField = document.createElement('div');
+            newField.classList.add('ingredient-field');
+            newField.innerHTML = '<input type="text" name="ingredient[]" placeholder="Ingredient" required> <input type="number" name="quantity[]" placeholder="Quantity" required> <input type="text" name="unit[]" placeholder="Unit" required> <button type="button" onclick="removeIngredientField()">Remove</button>';
+            container.appendChild(newField);
+        }
+        function removeIngredientField(){
+            var container = document.getElementById('ingredientFields');    
+            var lastField = container.lastElementChild;
+            container.removeChild(lastField);
+        }
+    </script>
+</body>
+</html>
