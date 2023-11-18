@@ -3,7 +3,7 @@ import csv
 
 class Unit(Enum):
     G = "g"
-    ML = "ml"
+    ML = "mL"
     SINGLE = ()
 
 class FoodProduct:
