@@ -16,6 +16,19 @@ def RefreshFoodTypeTable():
             except:
                 pass
 
-
     con.commit()
     con.close()
+
+def GetAllTypesWithUnit():
+    con = sqlite3.connect('database.db')
+    cur = con.cursor()
+
+    cur.execute('SELECT * FROM FoodType')
+    result = cur.fetchall()
+
+    con.close()
+    return result
+
+print(GetAllTypesWithUnit())
+
+    
