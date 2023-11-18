@@ -14,11 +14,11 @@
                 <div class="ingredient-field">
                     <input type="text" name="ingredient[]" placeholder="Ingredient" required>
                     <input type="number" name="quantity[]" placeholder="Quantity" required>
-                    <input type="text" name="unit[]" placeholder="Unit" required>
-                    <button type="button" onclick="removeIngredientField()">Remove</button>
+                    <input type="unit" name="unit[]" placeholder="Unit" required>
+                    <button type="button" onclick="removeIngredientField()" id="remove">Remove</button>
                 </div>
             </div>
-            <button type="button" onclick="addIngredientField()">Add More</button>
+            <button type="button" onclick="addIngredientField()" id="add">Add More</button>
             <input type="submit" value="Submit">
         </form>
     </div>
@@ -28,7 +28,7 @@
             var container = document.getElementById('ingredientFields');
             var newField = document.createElement('div');
             newField.classList.add('ingredient-field');
-            newField.innerHTML = '<input type="text" name="ingredient[]" placeholder="Ingredient" required> <input type="number" name="quantity[]" placeholder="Quantity" required> <input type="text" name="unit[]" placeholder="Unit" required> <button type="button" onclick="removeIngredientField()">Remove</button>';
+            newField.innerHTML = '<input type="text" name="ingredient[]" placeholder="Ingredient" required> <input type="number" name="quantity[]" placeholder="Quantity" required> <input type="unit" name="unit[]" placeholder="Unit" required> <button type="button" onclick="removeIngredientField()" id="remove">Remove</button>';
             container.appendChild(newField);
         }
         function removeIngredientField(){
